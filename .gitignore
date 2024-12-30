@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 /node_modules
+media/*
 # C extensions
 *.so
 
@@ -151,9 +152,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
-# All inside media folder
-media/*/*
 
 
 
