@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+<!-- Block Content-->
+
+{% block content %}
+
+<div class="z-1 bg-dark" style="--bs-bg-opacity: 0.8">
+  <div class="container">
+    <a
+      class="text-light text-decoration-none my-3 d-inline-block fs-4"
+      href='{% url "index" %}'
+      ><i class="bi bi-house"></i> Go Home</a
+    >
+    <div class="row">
+      {% for detail in details %}
+
+      <div class="col-md-8 offset-md-2">
+        <a href="{{detail.service.image.url}}"
+          ><img
+            class="img-fluid"
+            src="{{detail.service.image.url}}"
+            alt="Image"
+        /></a>
+      </div>
+      <div class="z-2 mt-5 my-5">
+        <p
+          class="text-center text-light fs-3 mb-3 text-uppercase text-decoration-none"
+        >
+          {{detail.title}}
+        </p>
+        <p class="text-light z-3 fs-5">{{detail.description|safe}}</p>
+      </div>
+      {% endfor %}
+      <a
+        href="https://wa.me/+17869561477?text=Greetings!,%20i'm%20interested%20in%20the%20cleaning%20service."
+        class="text-center mb-5"
+        ><button
+          class="btn bg-dark bg-gradient rounded-pill py-2 px-5 btn-primary text-light z-1"
+        >
+          Contact Service
+        </button></a
+      >
+    </div>
+  </div>
+  <!-- End Block Content-->
+  {% endblock content %}
+</div>

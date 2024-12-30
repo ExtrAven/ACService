@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="container text-center z-3 d-grid">
+  <div id="title">
+    <div class="d-flex img">
+      <img
+        class="mb-0 mx-auto logo"
+        src="{% static 'images/logo.jpeg' %}"
+        alt="Logo"
+      />
+    </div>
+    <h1 class="text-center display-1 mt-2 fw-bold">
+      Welcome to <span class="title-color">ACService</span>
+    </h1>
+  </div>
+  <h2 id="subtitle" class="text-center display-6 fw-bold">Our Services</h2>
+  {% for service in services %}
+  <div id="image" class="card card-body bg-transparent border-0 rounded">
+    <h3 class="card-title">{{ service.name }}</h3>
+    <div>
+      <a href={% url 'service' service.id %}
+        ><img
+          class="img-fluid w-100 rounded"
+          src="{{ service.image.url }}"
+          alt="service"
+      /></a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+.img {
+  padding-top: 10em;
+}
+
+.logo {
+  width: 25%;
+}
+
+.title-color {
+  color: rgb(206, 20, 20);
+}
+
+#title {
+  margin-bottom: 5em;
+  color: #eee;
+  animation-name: disappear;
+  animation-timeline: scroll();
+}
+
+#subtitle {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  color: #eee;
+  animation-name: appear;
+  animation-timeline: scroll();
+}
+
+#image {
+  animation-name: appear;
+  animation-timeline: scroll();
+}
+
+.card {
+  margin-bottom: em;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    top: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    margin-bottom: 25em;
+  }
+  .logo {
+    width: 50%;
+  }
+}
